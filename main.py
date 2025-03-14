@@ -260,8 +260,8 @@ class Main:
                                 new_path = os.path.join(self.options.output,
                                                         os.path.relpath(full_path, self.options.folder_name))
                                 os.makedirs(os.path.dirname(new_path), exist_ok=True)
-                                if not file.endswith('.lua'):
-                                    new_path = new_path[:-1]
+                                # if not file.endswith('.lua'):
+                                #     new_path = new_path[:-1]
                                 copyfile(full_src_path, new_path)
                                 if self.options.enable_logging:
                                     self.logger.info("Success")
@@ -336,8 +336,8 @@ class Main:
 
             new_path = os.path.join(self.options.output, os.path.relpath(full_path, self.options.folder_name))
             os.makedirs(os.path.dirname(new_path), exist_ok=True)
-            if not file.endswith('.lua'):
-                new_path = new_path[:-1]
+            # if not file.endswith('.lua'):
+            #     new_path = new_path[:-1]
             self.write_file(ast, new_path)
             if self.options.enable_logging:
                 logger.info("Success")
